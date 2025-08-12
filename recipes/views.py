@@ -4,14 +4,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def home(response):
-    return HttpResponse('Home 2')
-    ...
+def home(request):
+    return render(request, 'recipes/home.html', {
+        'name': 'Nayra',
+        'age': 30,
+        'profission': 'Desenvolvedora',
+    })
 
 
-def contato(response):
-    return HttpResponse('Contato')
-    ...
+def contato(request):
+    return render(request, 'me-apague/temp.html')
 
 
 def sobre(response):
